@@ -24,3 +24,24 @@ php artisan serve --host=0.0.0.0 --port=${PORT:-8000}
 # if [ ! -f .env ]; then
 #   cp .env.example .env
 # fi
+#!/bin/bash
+
+# Asignar permisos a carpetas necesarias
+chmod -R 775 storage bootstrap/cache
+
+# Instalar dependencias
+composer install --no-interaction --prefer-dist --optimize-autoloader
+npm install
+
+# ❌ NO crear .env — Laravel usará las env vars de Railway
+# ❌ NO ejecutar key:generate — ya la dimos manualmente en Railway
+
+# Migraciones y seeders
+php artisan migrate --force
+php artisan db:seed --force
+
+# Build frontend
+npm run build
+
+# Iniciar servidor Laravel
+php artisan serve --host=0.0.0.0 --port=${PORT:-8000}
