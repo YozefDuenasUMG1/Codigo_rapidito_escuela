@@ -2,4 +2,4 @@
 cmds = ["chmod +x start.sh"]
 
 [start]
-cmd = "./start.sh" 
+cmd = "bash start.sh" 
