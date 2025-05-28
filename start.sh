@@ -20,3 +20,7 @@ npm run build
 
 # Iniciar el servidor de Laravel en el puerto que Railway indique
 php artisan serve --host=0.0.0.0 --port=${PORT:-8000}
+
+# if [ ! -f .env ]; then
+#   cp .env.example .env
+# fi
