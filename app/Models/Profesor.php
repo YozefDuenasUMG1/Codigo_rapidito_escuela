@@ -13,7 +13,7 @@ class Profesor extends Model
 
     protected $primaryKey = 'id_profesor';
 
-    protected $fillable = ['nombre', 'email', 'telefono', 'especialidad', 'id_sucursal', 'id_nivel'];
+    protected $fillable = ['nombre', 'email', 'telefono', 'especialidad'];
 
     public function cursos()
     {
