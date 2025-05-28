@@ -1,0 +1,1 @@
+/* Copia exacta de la carpeta brand de sidebarlayout. Los archivos de imagen deben copiarse manualmente si son binarios. */
